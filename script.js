@@ -63,10 +63,6 @@
   else new IntersectionObserver((entries, observer) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: 0.12 }).observe;
   const observer = new IntersectionObserver((entries, observerInstance) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observerInstance.unobserve(entry.target); } }), { threshold: 0.12 });
   if (!reduceMotion) revealItems.forEach((item) => observer.observe(item));
-  const footer = document.createElement('footer');
-  footer.className = 'site-footer';
-  footer.innerHTML = `<div class="footer-inner"><div class="footer-lead"><div class="eyebrow">Wellington College International Shanghai</div><h2>HACKWELL <span>2026</span></h2><p>BEYOND THE SCREEN</p><strong>31 OCT — 01 NOV</strong></div><div class="footer-columns"><div><b>EXPLORE</b><a href="${location.pathname.startsWith('/') && location.pathname !== '/' ? '../' : './'}">Home</a><a href="/about/">About</a><a href="/schedule/">Schedule</a><a href="/workshops/">Workshops</a></div><div><b>CONNECT</b><a href="mailto:wellHackteam.wcis@wellingtoncollege.cn">Email the team</a><a href="/location/">Find the campus</a><a href="/faq/">Questions</a></div><div class="footer-note"><b>STUDENT-LED STEM EVENT</b><p>Ideas, collaboration and real-world making from the Wellington community.</p></div></div><div class="footer-bottom"><span>© 2026 HACKWELL</span><span>WELLINGTON COLLEGE INTERNATIONAL SHANGHAI</span></div></div>`;
-  document.body.append(footer);
   window.addEventListener('scroll', () => nav?.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
 })();
 
