@@ -39,6 +39,15 @@
     @media (max-width: 700px) { .site-footer { padding: 64px 7vw 24px; } .site-footer .footer-links { grid-template-columns: 1fr; gap: 34px; margin-top: 54px; padding-top: 36px; } .site-footer .footer-bottom { flex-direction: column; margin-top: 40px; } }
   `;
   document.head.append(footerStyle);
+
+  const siteRoutes = new Set(['about', 'schedule', 'workshops', 'prompts', 'faq', 'location']);
+  document.querySelectorAll('.site-nav a[href], .site-footer a[href], a.card[href]').forEach((link) => {
+    const href = link.getAttribute('href') ?? '';
+    if (/^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(href)) return;
+    const route = href.split(/[?#]/, 1)[0].split('/').find((segment) => siteRoutes.has(segment));
+    link.setAttribute('href', route ? `${siteRoot}${route}/` : siteRoot);
+  });
+
   const links = document.querySelector('.nav-links');
 
   toggle?.addEventListener('click', () => {
