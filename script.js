@@ -3,24 +3,41 @@
   const nav = document.querySelector('.site-nav');
   const toggle = document.querySelector('.menu-toggle');
 
-  if (!document.querySelector('.site-footer')) {
-    const footer = document.createElement('footer');
-    footer.className = 'site-footer';
-    footer.innerHTML = `
-      <div class="footer-brand">
-        <div class="eyebrow">Wellington College International Shanghai</div>
-        <h2>HACKWELL <span>2026</span></h2>
-        <p>BEYOND THE SCREEN</p>
-        <strong>31 OCT — 01 NOV</strong>
-      </div>
-      <div class="footer-links">
-        <div><strong>EXPLORE</strong><a href="./">Home</a><a href="/about/">About</a><a href="/schedule/">Schedule</a><a href="/workshops/">Workshops</a></div>
-        <div><strong>CONNECT</strong><a href="mailto:wellHackteam.wcis@wellingtoncollege.cn">Email the team</a><a href="/location/">Find the campus</a><a href="/faq/">Questions</a></div>
-        <div><strong>STUDENT-LED STEM EVENT</strong><p>Ideas, collaboration and real-world making from the Wellington community.</p></div>
-      </div>
-      <div class="footer-bottom"><span>© 2026 HACKWELL</span><span>WELLINGTON COLLEGE INTERNATIONAL SHANGHAI</span></div>`;
-    document.body.append(footer);
-  }
+  document.querySelectorAll('.site-footer').forEach((footer) => footer.remove());
+  const footer = document.createElement('footer');
+  footer.className = 'site-footer';
+  footer.innerHTML = `
+    <div class="footer-brand">
+      <div class="eyebrow">Wellington College International Shanghai</div>
+      <h2>HACKWELL <span>2026</span></h2>
+      <p>BEYOND THE SCREEN</p>
+      <strong>31 OCT — 01 NOV</strong>
+    </div>
+    <div class="footer-links">
+      <div><strong>EXPLORE</strong><a href="./">Home</a><a href="/about/">About</a><a href="/schedule/">Schedule</a><a href="/workshops/">Workshops</a></div>
+      <div><strong>CONNECT</strong><a href="mailto:wellHackteam.wcis@wellingtoncollege.cn">Email the team</a><a href="/location/">Find the campus</a><a href="/faq/">Questions</a></div>
+      <div><strong>STUDENT-LED STEM EVENT</strong><p>Ideas, collaboration and real-world making from the Wellington community.</p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 HACKWELL</span><span>WELLINGTON COLLEGE INTERNATIONAL SHANGHAI</span></div>`;
+  document.body.append(footer);
+  const footerStyle = document.createElement('style');
+  footerStyle.textContent = `
+    .site-footer { background: #e9f6ee; color: #164b38; background-image: linear-gradient(45deg, rgba(104, 205, 151, .14) 1px, transparent 1px), linear-gradient(-45deg, rgba(104, 205, 151, .14) 1px, transparent 1px); background-size: 80px 80px; padding: 96px 8vw 28px; margin-top: 0; }
+    .site-footer .footer-brand { max-width: 1100px; margin: 0 auto; }
+    .site-footer .eyebrow { color: #69e7a2; font-size: 14px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .site-footer h2 { margin: 22px 0 8px; color: #0d3d2c; font-size: clamp(4rem, 9vw, 9rem); line-height: .9; letter-spacing: -.08em; }
+    .site-footer h2 span { color: #238d57; }
+    .site-footer .footer-brand p { margin: 0 0 32px; color: #164b38; font-size: 22px; letter-spacing: .28em; }
+    .site-footer .footer-brand strong { color: #164b38; font-size: 20px; }
+    .site-footer .footer-links { max-width: 1100px; margin: 76px auto 0; padding-top: 56px; border-top: 1px solid rgba(22, 75, 56, .28); display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 56px; }
+    .site-footer .footer-links > div { display: flex; flex-direction: column; gap: 12px; }
+    .site-footer .footer-links strong { color: #164b38; font-size: 14px; letter-spacing: .14em; }
+    .site-footer .footer-links a, .site-footer .footer-links p { margin: 0; color: #2d8059; font-size: 21px; }
+    .site-footer .footer-links p { margin-top: 30px; max-width: 360px; line-height: 1.55; }
+    .site-footer .footer-bottom { max-width: 1100px; margin: 60px auto 0; padding-top: 28px; border-top: 1px solid rgba(22, 75, 56, .28); display: flex; justify-content: space-between; gap: 24px; color: #5b806f; font-size: 14px; letter-spacing: .1em; }
+    @media (max-width: 700px) { .site-footer { padding: 64px 7vw 24px; } .site-footer .footer-links { grid-template-columns: 1fr; gap: 34px; margin-top: 54px; padding-top: 36px; } .site-footer .footer-bottom { flex-direction: column; margin-top: 40px; } }
+  `;
+  document.head.append(footerStyle);
   const links = document.querySelector('.nav-links');
 
   toggle?.addEventListener('click', () => {
