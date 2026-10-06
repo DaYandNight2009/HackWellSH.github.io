@@ -3,6 +3,13 @@
   const nav = document.querySelector('.site-nav');
   const toggle = document.querySelector('.menu-toggle');
 
+  document.querySelectorAll('body > *:not(.site-footer)').forEach((element) => {
+    const text = element.textContent?.replace(/\s+/g, ' ').trim() ?? '';
+    if (text.includes('31 OCT — 01 NOV · Wellington College International Shanghai')) {
+      element.remove();
+    }
+  });
+
   if (!document.querySelector('.site-footer')) {
     const footer = document.createElement('footer');
     footer.className = 'site-footer';
