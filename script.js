@@ -2,6 +2,25 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const nav = document.querySelector('.site-nav');
   const toggle = document.querySelector('.menu-toggle');
+
+  if (!document.querySelector('.site-footer')) {
+    const footer = document.createElement('footer');
+    footer.className = 'site-footer';
+    footer.innerHTML = `
+      <div class="footer-brand">
+        <div class="eyebrow">Wellington College International Shanghai</div>
+        <h2>HACKWELL <span>2026</span></h2>
+        <p>BEYOND THE SCREEN</p>
+        <strong>31 OCT — 01 NOV</strong>
+      </div>
+      <div class="footer-links">
+        <div><strong>EXPLORE</strong><a href="./">Home</a><a href="/about/">About</a><a href="/schedule/">Schedule</a><a href="/workshops/">Workshops</a></div>
+        <div><strong>CONNECT</strong><a href="mailto:wellHackteam.wcis@wellingtoncollege.cn">Email the team</a><a href="/location/">Find the campus</a><a href="/faq/">Questions</a></div>
+        <div><strong>STUDENT-LED STEM EVENT</strong><p>Ideas, collaboration and real-world making from the Wellington community.</p></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 HACKWELL</span><span>WELLINGTON COLLEGE INTERNATIONAL SHANGHAI</span></div>`;
+    document.body.append(footer);
+  }
   const links = document.querySelector('.nav-links');
 
   toggle?.addEventListener('click', () => {
