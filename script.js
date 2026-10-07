@@ -4,67 +4,6 @@
 
   document.querySelectorAll('.site-footer').forEach((footer) => footer.remove());
   const siteRoot = window.location.hostname.endsWith('github.io') ? '/HackWellSH.github.io/' : '/';
-  const pageTabs = [
-    { route: 'home', label: 'Home', href: siteRoot },
-    { route: 'about', label: 'About', href: `${siteRoot}about/` },
-    { route: 'schedule', label: 'Schedule', href: `${siteRoot}schedule/` },
-    { route: 'workshops', label: 'Workshops', href: `${siteRoot}workshops/` },
-    { route: 'prompts', label: 'Prompts', href: `${siteRoot}prompts/` },
-    { route: 'faq', label: 'FAQ', href: `${siteRoot}faq/` },
-    { route: 'location', label: 'Location', href: `${siteRoot}location/` },
-  ];
-  const routePath = window.location.pathname.startsWith(siteRoot)
-    ? window.location.pathname.slice(siteRoot.length)
-    : window.location.pathname.split('/').filter(Boolean).join('/');
-  const currentRoute = routePath.split('/')[0] || 'home';
-
-  if (nav) {
-    nav.classList.add('browser-nav');
-    nav.setAttribute('aria-label', 'Main navigation');
-    nav.innerHTML = `
-      <div class="browser-tab-strip">
-        <div class="browser-tabs" aria-label="HackWell pages">
-          ${pageTabs.map((tab) => `
-            <a class="browser-tab" href="${tab.href}"${tab.route === currentRoute ? ' aria-current="page"' : ''} title="${tab.label} — HackWell 2026">
-              <img class="browser-favicon" src="${siteRoot}img/wellington-crest.png" alt="" aria-hidden="true" width="16" height="19">
-              <span class="browser-tab-label">${tab.label}</span>
-            </a>`).join('')}
-        </div>
-      </div>
-      <div class="browser-toolbar">
-        <div class="browser-controls" aria-label="Browser navigation controls">
-          <button class="browser-control" type="button" data-browser-action="back" aria-label="Go back">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7M8 12h12"></path></svg>
-          </button>
-          <button class="browser-control" type="button" data-browser-action="forward" aria-label="Go forward">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7M16 12H4"></path></svg>
-          </button>
-          <button class="browser-control" type="button" data-browser-action="reload" aria-label="Reload page">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4.5 9a7.5 7.5 0 0 1 13-2L20 12M4 17v-5h5m10.5 3a7.5 7.5 0 0 1-13 2L4 12"></path></svg>
-          </button>
-          <a class="browser-control" href="${siteRoot}" aria-label="Go to home page">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3.5 10 8.5-7 8.5 7v10h-6v-6h-5v6h-6z"></path></svg>
-          </a>
-        </div>
-        <div class="browser-address" aria-label="Current page address">
-          <span class="browser-address-lock" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"></path></svg>
-          </span>
-          <span class="browser-address-value" data-browser-address></span>
-        </div>
-        <a class="browser-join" href="mailto:wellHackteam.wcis@wellingtoncollege.cn">JOIN US <span aria-hidden="true">↗</span></a>
-      </div>`;
-
-    const address = nav.querySelector('[data-browser-address]');
-    const updateAddress = () => {
-      if (address) address.textContent = `${window.location.protocol}//${window.location.host}${window.location.pathname}${window.location.search}`;
-    };
-    updateAddress();
-    window.addEventListener('pageshow', updateAddress);
-    nav.querySelector('[data-browser-action="back"]')?.addEventListener('click', () => window.history.back());
-    nav.querySelector('[data-browser-action="forward"]')?.addEventListener('click', () => window.history.forward());
-    nav.querySelector('[data-browser-action="reload"]')?.addEventListener('click', () => window.location.reload());
-  }
   const footer = document.createElement('footer');
   footer.className = 'site-footer';
   footer.innerHTML = `
