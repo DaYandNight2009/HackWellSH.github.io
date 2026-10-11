@@ -39,7 +39,7 @@
   `;
   document.head.append(footerStyle);
 
-  const siteRoutes = new Set(['about', 'schedule', 'workshops', 'prompts', 'faq', 'location']);
+  const siteRoutes = new Set(['about', 'schedule', 'workshops', 'prompts', 'faq', 'location', 'album']);
   document.querySelectorAll('.site-nav a[href], .site-footer a[href], a.card[href]').forEach((link) => {
     const href = link.getAttribute('href') ?? '';
     if (/^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(href)) return;
