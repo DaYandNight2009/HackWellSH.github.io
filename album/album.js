@@ -42,8 +42,8 @@ const photoSets = {
   ],
 };
 
-document.querySelectorAll('.album-generated[data-year]').forEach((gallery) => {
-  const year = gallery.dataset.year;
+document.querySelectorAll('.album-generated[data-year], .album-year#2025 .album-grid').forEach((gallery) => {
+  const year = gallery.dataset.year || gallery.closest('.album-year').id;
   const photos = photoSets[year] || [];
   gallery.innerHTML = Array.from({ length: 20 }, (_, index) => {
     const number = String(index + 1).padStart(2, '0');
