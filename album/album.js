@@ -14,6 +14,11 @@ const photoSets = {
     'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20240921-22%20Hackwell34-IxtNIYtn1PCekSoDxNmVn61dYxwGJS.jpg',
     'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20240921-22%20Hackwell35-BQeQNvh6KSuvGsumRBEYSjVySSqigp.jpg',
     'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20240921-22%20Hackwell37-TeTJfaG8wmALCklE4ZRGkomRSQ1k19.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20240921-22%20Hackwell3-OvuWLmEqm1DgYpQUmupqHhXioKpNdr.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20240921-22%20Hackwell39-ekUPqGPg43jFoD5cblwbCx3FGL4W0m.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20240921-22%20Hackwell38-vlAuLVWUBEQhUU0nwouqEtCmh62Gnh.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20240921-22%20Hackwell28-3VnnBu4nVJO5HEG7aMfzvVuFq7YGsf.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20240921-22%20Hackwell37-fLjQ55LfTUUTPQATmUr3IWummz6CJk.jpg',
   ],
 };
 
