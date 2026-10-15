@@ -15,7 +15,7 @@
     </div>
     <div class="footer-links">
       <div><strong>EXPLORE</strong><a href="${siteRoot}">Home</a><a href="${siteRoot}about/">About</a><a href="${siteRoot}schedule/">Schedule</a><a href="${siteRoot}workshops/">Workshops</a></div>
-      <div><strong>CONNECT</strong><a href="mailto:wellHackteam.wcis@wellingtoncollege.cn">Email the team</a><a href="${siteRoot}location/">Find the campus</a><a href="${siteRoot}faq/">Questions</a></div>
+      <div><strong>CONNECT</strong><a href="mailto:Tobias.Oyugi@wellingtoncollege.cn">Email the team</a><a href="${siteRoot}location/">Find the campus</a><a href="${siteRoot}faq/">Questions</a></div>
       <div><strong>STUDENT-LED STEM EVENT</strong><p>Ideas, collaboration and real-world making from the Wellington community.</p></div>
     </div>
     <div class="footer-bottom"><span>© 2026 HACKWELL</span><span>WELLINGTON COLLEGE INTERNATIONAL SHANGHAI</span></div>`;
