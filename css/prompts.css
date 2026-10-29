@@ -131,3 +131,34 @@
     aspect-ratio: 1.75 / 1;
   }
 }
+
+.scenario-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.scenario-card:last-child:nth-child(odd) .scenario-poster {
+  align-self: center;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2.45 / 1;
+}
+
+@media (max-width: 760px) {
+  .scenario-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    display: flex;
+  }
+
+  .scenario-card:last-child:nth-child(odd) .scenario-poster {
+    aspect-ratio: 2.2 / 1;
+  }
+}
+
+@media (max-width: 420px) {
+  .scenario-card:last-child:nth-child(odd) .scenario-poster {
+    aspect-ratio: 1.75 / 1;
+  }
+}
